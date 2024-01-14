@@ -1,4 +1,5 @@
 import css from './FriendListItem.module.css';
+
 export const FriendListItem = ({ friend }) => {
   return (
     <li className={css.item}>
@@ -8,7 +9,12 @@ export const FriendListItem = ({ friend }) => {
         alt={friend.name}
         width="48"
       />
-      <p className={friend.isOnline ? css.statusOnline : css.statusOffline}>{friend.name}</p>
+      <p >
+        {friend.name}{' '}
+        <span className={friend.isOnline ? css.statusOnline : css.statusOffline}>
+          {friend.isOnline ? 'Online' : 'Offline'}
+        </span>
+      </p>
     </li>
   );
 };
